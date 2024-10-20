@@ -40,12 +40,16 @@ h1 {
     color: #ffffff; /* White text in chat box */
 }
 
-.message {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 80%;
+/* Profile image styles */
+.message img {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Ensure the image is square */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image scales properly without distortion */
+    margin-right: 10px; /* Adds some space between the image and the message text */
+    vertical-align: middle; /* Aligns the image with the message text */
 }
+
 
 .user-message {
     background-color: #3b7bdb; /* User message color */
