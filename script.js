@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('send-button');
 
     async function getAyanokojiResponse(userInput) {
-        const apiKey = 'AIzaSyDGeU0PzB42yuYfzPa3AftB6BPokQaVGHc'; // Replace with your actual API key
+        const apiKey = AIzaSyDGeU0PzB42yuYfzPa3AftB6BPokQaVGHc; // Replace with your actual API key
         const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
         
         const prompt = `Act as Kiyotaka Ayanokoji from Classroom of the Elite and respond to the following: ${userInput}`;
