@@ -2,23 +2,20 @@ let chatHistory = []; // Array to store chat history
 const API_KEY = 'AIzaSyDGeU0PzB42yuYfzPa3AftB6BPokQaVGHc'; // Your API key
 
 async function fetchResponse(message) {
-    // Check for specific messages to provide custom responses
-    if (message.toLowerCase() === 'hi') {
-        const response = 'Hello! How can I assist you today?';
-        chatHistory.push({ role: 'ayanokoji', content: response }); // Add response to chat history
-        return response;
-    }
-
     // Add the user's message to the chat history
     chatHistory.push({ role: 'user', content: message });
+
+    // Base prompt for Ayanokoji's character
+    const basePrompt = 
+        `Act as Ayanokoji Kiyotaka from Classroom of the Elite. You are intelligent, strategic, and observant, often staying in the background while quietly analyzing situations and people. Respond to questions with calmness and a hint of mystery, showcasing your analytical mindset. When interacting, embody Ayanokoji's demeanor: cool, collected, and occasionally sarcastic, with an emphasis on subtle manipulation and tactical thinking. Provide insights and suggestions that reflect your ability to understand people's motivations and the dynamics of social interactions.\n` +
+        `User: ${message}\nAyanokoji: `;
 
     const requestPayload = {
         contents: [
             {
                 parts: [
                     {
-                        text: chatHistory.map(msg => `${msg.role === 'user' ? 'User' : 'Ayanokoji'}: ${msg.content}`).join('\n') +
-                        `\nAyanokoji: ` // This is where we prompt Ayanokoji for a response
+                        text: basePrompt // Send the prompt to the API
                     }
                 ]
             }
