@@ -1,13 +1,12 @@
-// Add this at the top of your script.js file
-const GOOGLE_API_KEY = 'AIzaSyDGeU0PzB42yuYfzPa3AftB6BPokQaVGHc';
+// IMPORTANT: Replace this with your new API key
+const GOOGLE_API_KEY = AIzaSyDGeU0PzB42yuYfzPa3AftB6BPokQaVGHc;
 
 async function fetchResponse(message) {
     try {
-        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent', {
+        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + GOOGLE_API_KEY, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${GOOGLE_API_KEY}`
             },
             body: JSON.stringify({
                 contents: [{
