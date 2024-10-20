@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${GOOGLE_API_KEY}`  // Include the API key in the request
+                    'Authorization': `Bearer ${GOOGLE_API_KEY}`  // Use API key in Authorization header
                 },
                 body: JSON.stringify({
                     contents: [{
@@ -47,17 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
 
-            // Check if the response is okay
+            // Log the response status for debugging
+            console.log('Response Status:', response.status);
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
             }
 
             const data = await response.json();
+            console.log('Response Data:', data);  // Log the data for debugging
             const botResponse = data.candidates[0]?.content?.parts[0]?.text || 'No response from bot.';
             addMessageToChat('bot', botResponse);  // Add bot's response to chat
         } catch (error) {
             console.error('Error:', error);
-            addMessageToChat('bot', 'Sorry, I encountered an error while processing your request.');
+            addMessageToChat('bot', `Sorry, I encountered an error while processing your request: ${error.message}`);
         }
     }
 });
