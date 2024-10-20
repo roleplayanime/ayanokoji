@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create an image element for the profile picture
         const img = document.createElement('img');
-        img.src = sender === 'user' ? 'https://images.wallpapersden.com/image/wxl-linux-power-user-hd-anime-art_91320.jpg' : 'profie.jpg'; // Add your image paths
+        img.src = sender === 'user' ? 'hi.jpg' : 'profie.jpg'; // Add your image paths
         img.alt = sender === 'user' ? 'You' : 'Bot';
  
         // Append the image and message text
