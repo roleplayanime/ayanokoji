@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = document.createElement('img');
         img.src = sender === 'user' ? 'images/user-profile.png' : './profie.png'; // Add your image paths
         img.alt = sender === 'user' ? 'You' : 'Bot';
-
+ 
         // Append the image and message text
         messageElement.appendChild(img);
         messageElement.appendChild(document.createTextNode(message));
