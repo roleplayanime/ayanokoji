@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Create an image element for the profile picture
         const img = document.createElement('img');
-        img.src = sender === 'user' ? 'images/user-profile.png' : 'profie.png'; // Add your image paths
+        img.src = sender === 'user' ? 'images/user-profile.png' : './profie.png'; // Add your image paths
         img.alt = sender === 'user' ? 'You' : 'Bot';
 
         // Append the image and message text
