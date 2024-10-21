@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const historyText = chatHistory.map(chat => `${chat.sender}: ${chat.message}`).join('\n');
             const fullMessage = `${historyText}\nYou: ${message}\nAyanokoji:`;
 
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent?key=AIzaSyDGeU0PzB42yuYfzPa3AftB6BPokQaVGHc`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDfK7jvOdXqc40MUbhUV2DRDXGseMVw17U`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
