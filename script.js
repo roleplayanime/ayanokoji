@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendButton = document.getElementById('sendButton');
 
     let chatHistory = []; // Store the chat history
-    const maxHistoryLength = 20; // Limit the history to last 20 messages
+    const maxHistoryLength = 20; // Limit the history to last 20 messages 
 
     sendButton.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', (e) => {
